@@ -1,0 +1,68 @@
+@import '../scss/varables';
+@import '../scss/extend';
+@import '../scss/includes';
+
+$width: 80%;
+
+#Blog{
+    @include mobile{
+        background-color: $secondaryColor;
+
+    }
+    @include tablet{
+        background-color: lightgreen;
+
+    }
+    @include desktop{
+        background-color: lightpink;
+
+    }
+    // width: $width;
+    // margin: auto;
+    @extend .width90;
+    h2{
+        text-align: center;
+        margin-top: 1rem;
+        font-size: 3vw;
+        color: $heading2;
+    }
+    p{
+        width: 60%;
+        margin: auto;
+        font-size: 2vw;
+        padding: 1rem;
+        color: $paragraph;
+
+    }
+    .boxes{
+        min-height: 20vh;
+        padding: 10px;
+        @include flex_between();
+        @include mobile{
+            flex-direction: column
+        }
+        @include tablet {
+            flex-direction: row
+        }
+
+        div:hover{
+            color: blue;
+            text-decoration: underline
+        }
+    }
+    .bg{
+       @extend .width70;
+       @include image('../../assets/react.svg');
+    }
+
+    button{
+        &:hover{
+            background-color: green;
+            color: white;
+        }
+    }
+}
+
+// #Blog h2{
+//     text-align: center;
+// }
