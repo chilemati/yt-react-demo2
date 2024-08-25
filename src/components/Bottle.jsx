@@ -1,9 +1,11 @@
 import React from 'react'
 import './bottle.css';
 import global from './global.module.css';
+import { useCount } from './customHooks/useCount';
 
 const Bottle = ({name,price}) => {
     // js
+    let {c,increment} = useCount(10);
     function handleBuy() {
         alert('Please waith while will redirect your to the checkout page')
     }
@@ -13,6 +15,9 @@ const Bottle = ({name,price}) => {
   return (
     <div id='Bottle' >
         {/* jsx */}
+        <h3> Count: {c} </h3>
+        <button className='border border-2 py-1 px-4 rounded ' onClick={increment} >c++</button>
+        <hr />
         <h2 style={{color: 'red',backgroundColor: 'gray'}} >I am {name?name: 'Eva'} Bottle. You can get me for just ${price?price: 1} </h2>
         <p>Lorem ipsum dolor sit amet.</p>
         <button onClick={()=> handleBuy()} >Buy Now</button>
