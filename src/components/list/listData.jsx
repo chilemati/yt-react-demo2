@@ -1,0 +1,1 @@
+export const numList = [1,2,4,6,8,0,11,44];

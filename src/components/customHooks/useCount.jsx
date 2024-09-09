@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useState, useTransition } from 'react'
 
 export const useCount = (count) => {
     let [c,setC] = useState(count);
+    let [isPending,startTransition] = useTransition();
     function increment() {
-        setC(prev=> prev+1);
+        startTransition(()=> {
+            setC(prev=> prev+1);
+        })
        }
        function decrement() {
         setC(prev=> prev-1);
@@ -11,7 +14,8 @@ export const useCount = (count) => {
   return {
       c: c,
       increment,
-      decrement
+      decrement,
+      isPending
   }
 }
 

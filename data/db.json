@@ -1,0 +1,42 @@
+{
+  "Blogs": [
+    {
+      "id": "2",
+      "title": "Css Tricks 2",
+      "body": "Use w3schools.com",
+      "author": "Amadi Brave"
+    },
+    {
+      "id": "3",
+      "title": "Tailwind Tricks",
+      "body": " Lorem ipsum, dolor sit amet consectetur adipisicing elit. Velit eum, modi vel veniam adipisci maiores corrupti, voluptate culpa officiis consectetur natus officia corporis eveniet et ut voluptas ipsam quo assumenda.",
+      "author": "Amadi Purple"
+    },
+    {
+      "id": "a1a1",
+      "title": "How to Edit React Codes",
+      "body": "Practice alot",
+      "author": "Amadi Ben"
+    }
+  ],
+  "Users": [
+    {
+      "id": "amadichile@gmail.com",
+      "fullname": "Amadi Chile",
+      "password": "udisdusidusiA5$",
+      "role": "Admin"
+    },
+    {
+      "id": "amadichile007@gmail.com",
+      "fullname": "Amadi Green",
+      "password": "udisdusidusiA5$",
+      "role": "normal"
+    },
+    {
+      "id": "amadichile@1gmail.com",
+      "fullname": "Amadi Chile1",
+      "password": "88880000Un@",
+      "role": "normal"
+    }
+  ]
+}
