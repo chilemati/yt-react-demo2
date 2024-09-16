@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './car.css';
 import styles from './global.module.css'
 import { useRecoilState } from 'recoil';
@@ -10,13 +10,35 @@ import viteLogo from '/vite.svg';
 import Child from './Child';
 import { useCount } from './customHooks/useCount';
 import LazyImage from './lazy/LazyImage';
+import Paginate1 from './paginate1/Paginate1';
+import { cardItems } from './paginate1/paginateData';
 const Car = () => {
   // let [cart,setCart] = useRecoilState(cartATom)
   let {c,increment} = useCount(5);
-  console.count('car rendered: ')
+  let [product,setProduct] = useState(cardItems);
+  let [showing,setShowing] = useState(4);
+  console.count('car rendered: ');
+
+  function handleShowing() {
+    if(showing <= cardItems.length -1) {
+      setShowing(prev=> prev+=4);
+    }else{
+      setShowing(cardItems.length-1)
+    }
+  }
+
   return (
     <div id='Car' >
       <h1 className='clamp' >Heading 1</h1>
+      <Paginate1 itemsPerPage={4} items={cardItems} />
+      <hr />
+         <h4 className='text-red-700' >prouduct List</h4>
+         {
+          product.filter((each,i)=> (i> 0) && (i <= showing) ).map((each,i)=> (
+            <div key={each.id} > Product Name {i+1} </div>
+          ))
+         }
+         <button onClick={()=> handleShowing()} className="shadow">Show More</button>
       <LazyImage image={{src: 'https://media.istockphoto.com/id/465383082/photo/female-swimmer-at-the-swimming-pool.jpg?s=612x612&w=0&k=20&c=tcTwN2rTvUBK4wddan_GUCxrXX6bBoU-hyrVMvmT0BM='}} />
 
       <div className="flexCol">

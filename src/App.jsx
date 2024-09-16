@@ -16,6 +16,7 @@ const Signup  = lazy(()=> import('./components/signup/Signup'));
 const Update  = lazy(()=> import('./components/update/Update'));
 const Create  = lazy(()=> import('./components/create/Create'));
 const Parent  = lazy(()=> import('./components/parent/Parent'));
+const SingleProduct  = lazy(()=> import('./components/singleProduct/SingleProduct'));
 
 
 // js environ
@@ -48,6 +49,8 @@ function App() {
           <Route path='/update/:slug' element={<Update />} />
           {/* /blog/1*/}
           <Route path='/blog/:id' element={<Details />} />
+          {/* /product/1 */}
+          <Route path='/product/:single' element={<SingleProduct />} />
           <Route path='*' element={<Error />} />
         </Routes>
           </Suspense>
